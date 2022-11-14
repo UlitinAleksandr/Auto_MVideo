@@ -1,8 +1,11 @@
+import allure
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class BasketPage(Base):
@@ -122,7 +125,7 @@ class BasketPage(Base):
         print("Click authorization button: OK")
 
     def input_number_phone(self):
-        self.get_field_number().send_keys(input("Input phone number(10 value): "))
+        self.get_field_number().send_keys("9619256461")
         print("Phone number: OK")
 
     def enter_button_continue_basket(self):
@@ -159,62 +162,80 @@ class BasketPage(Base):
 
     # Methods
     def open_page_basket(self):
-        self.driver.get(self.url_basket)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_basket)
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("open page basket"):
+            Logger.add_start_step(method="open_page_basket")
+            self.driver.get(self.url_basket)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_basket)
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="open_page_basket")
 
     def click_logo_go_main(self):
-        self.driver.get(self.url_basket)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_basket)
-        self.click_logo()
-        self.assert_current_url("https://www.mvideo.ru/")
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("click logo go main"):
+            Logger.add_start_step(method="click_logo_go_main")
+            self.driver.get(self.url_basket)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_basket)
+            self.click_logo()
+            self.assert_current_url("https://www.mvideo.ru/")
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="click_logo_go_main")
 
     def select_city_basket(self):
-        self.driver.get(self.url_basket)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_basket)
-        self.click_menu_city()
-        self.input_field_city()
-        self.click_need_city()
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("select city basket"):
+            Logger.add_start_step(method="select_city_basket")
+            self.driver.get(self.url_basket)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_basket)
+            self.click_menu_city()
+            self.input_field_city()
+            self.click_need_city()
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="select_city_basket")
 
     def authorization_basket(self):
-        self.driver.get(self.url_basket)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_basket)
-        self.auth_click_button()
-        self.assert_current_url("https://www.mvideo.ru/login")
-        self.input_number_phone()
-        self.enter_button_continue_basket()
-        self.input_code_basket()
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("authorization basket"):
+            Logger.add_start_step(method="authorization_basket")
+            self.driver.get(self.url_basket)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_basket)
+            self.auth_click_button()
+            self.assert_current_url("https://www.mvideo.ru/login")
+            self.input_number_phone()
+            self.enter_button_continue_basket()
+            self.input_code_basket()
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="authorization_basket")
 
     def add_product(self):
-        self.driver.get(self.url_basket)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_basket)
-        self.click_button_add_basket()
-        self.assert_word(self.get_text_add_basket_link(), self.text_add_basket)
-        self.click_button_go_to_basket()
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("add product"):
+            Logger.add_start_step(method="add_product")
+            self.driver.get(self.url_basket)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_basket)
+            self.click_button_add_basket()
+            self.assert_word(self.get_text_add_basket_link(), self.text_add_basket)
+            self.click_button_go_to_basket()
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="add_product")
 
     def delete_product_from_basket(self):
-        self.driver.get(self.url_basket)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_basket)
-        self.click_button_add_basket()
-        self.assert_word(self.get_text_add_basket_link(), self.text_add_basket)
-        self.click_button_go_to_basket()
-        self.delete_product()
-        self.assess_delete_button()
-        self.assert_word(self.get_text_empty_basket_page(), self.text_empty_basket)
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("delete product from basket"):
+            Logger.add_start_step(method="delete_product_from_basket")
+            self.driver.get(self.url_basket)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_basket)
+            self.click_button_add_basket()
+            self.assert_word(self.get_text_add_basket_link(), self.text_add_basket)
+            self.click_button_go_to_basket()
+            self.delete_product()
+            self.assess_delete_button()
+            self.assert_word(self.get_text_empty_basket_page(), self.text_empty_basket)
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="delete_product_from_basket")

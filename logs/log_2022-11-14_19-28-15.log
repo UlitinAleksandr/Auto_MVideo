@@ -1,0 +1,11 @@
+
+-----
+Test: tests/test_main_page.py::test_enter_user_and_buy_iphone13pro (call)
+Start time: 2022-11-14 19:28:19.515850
+Start name method: enter_user_and_buy_iphone13pro
+
+End time: 2022-11-14 19:29:00.825586
+End name method: enter_user_and_buy_iphone13pro
+URL: https://www.mvideo.ru/purchase/step2
+
+-----

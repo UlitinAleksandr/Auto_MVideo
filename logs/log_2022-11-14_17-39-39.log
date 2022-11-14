@@ -1,0 +1,22 @@
+
+-----
+Test: tests/test_phone_page.py::test_open_phone_page (call)
+Start time: 2022-11-14 17:39:43.120504
+Start name method: open_phone_page
+
+End time: 2022-11-14 17:39:53.357717
+End name method: open_phone_page
+URL: https://www.mvideo.ru/telefony
+
+-----
+
+-----
+Test: tests/test_phone_page.py::test_select_samsung (call)
+Start time: 2022-11-14 17:39:53.363571
+Start name method: select_samsung_phone
+
+End time: 2022-11-14 17:40:04.524126
+End name method: select_samsung_phone
+URL: https://www.mvideo.ru/smartfony-i-svyaz-10/smartfony-205/f/brand=samsung/tolko-v-nalichii=da
+
+-----
