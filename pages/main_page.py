@@ -1,10 +1,12 @@
 import time
 
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from pages.phone_page import PhonePage
+from utilities.logger import Logger
 
 
 class MainPages(PhonePage):
@@ -50,7 +52,7 @@ class MainPages(PhonePage):
                                                                                         self.button_continue)))
 
     def get_field_input_code(self):
-        return WebDriverWait(self.driver, timeout=30).until(EC.element_to_be_clickable((By.XPATH,
+        return WebDriverWait(self.driver, timeout=100).until(EC.element_to_be_clickable((By.XPATH,
                                                                                         self.field_input_code)))
 
     def get_field_email(self):
@@ -107,7 +109,7 @@ class MainPages(PhonePage):
         print("Click link enter ")
 
     def input_number(self):
-        self.get_input_field_number().send_keys(input("Input phone number(10 value): "))
+        self.get_input_field_number().send_keys("9619256461")
         print("Phone number: OK")
 
     def fail_input_number(self):
@@ -172,128 +174,161 @@ class MainPages(PhonePage):
 
     # Methods
     def open_main_page(self):
-        self.driver.get(self.url_main_pages)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_main_pages)
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("open main page"):
+            Logger.add_start_step(method="open_main_page")
+            self.driver.get(self.url_main_pages)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_main_pages)
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="open_main_page")
 
     def registration_user(self):
-        self.driver.get(self.url_main_pages)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_main_pages)
-        self.click_link_enter()
-        self.input_number()
-        self.enter_button_continue()
-        self.input_code()
-        self.input_email()
-        self.input_name()
-        self.input_last_name()
-        self.end_button()
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("registration user"):
+            Logger.add_start_step(method="registration_user")
+            self.driver.get(self.url_main_pages)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_main_pages)
+            self.click_link_enter()
+            self.input_number()
+            self.enter_button_continue()
+            self.input_code()
+            self.input_email()
+            self.input_name()
+            self.input_last_name()
+            self.end_button()
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="registration_user")
 
     def enter_user(self):
-        self.driver.get(self.url_main_pages)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_main_pages)
-        self.click_link_enter()
-        self.input_number()
-        self.enter_button_continue()
-        self.input_code()
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("enter user"):
+            Logger.add_start_step(method="enter_user")
+            self.driver.get(self.url_main_pages)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_main_pages)
+            self.click_link_enter()
+            self.input_number()
+            self.enter_button_continue()
+            self.input_code()
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="enter_user")
 
     def select_city(self):
-        self.driver.get(self.url_main_pages)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_main_pages)
-        self.menu_city()
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("select city"):
+            Logger.add_start_step(method="select_city")
+            self.driver.get(self.url_main_pages)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_main_pages)
+            self.menu_city()
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="select_city")
 
     def select_category_phones(self):
-        self.driver.get(self.url_main_pages)
-        self.driver.maximize_window()
-        self.open_category_phone()
-        self.assert_current_url(self.url_phone_page)
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("select category phones"):
+            Logger.add_start_step(method="select_category_phones")
+            self.driver.get(self.url_main_pages)
+            self.driver.maximize_window()
+            self.open_category_phone()
+            self.assert_current_url(self.url_phone_page)
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="select_category_phones")
 
     def reload_page_logo(self):
-        self.driver.get(self.url_main_pages)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_main_pages)
-        self.reload_click_logo()
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("reload page logo"):
+            Logger.add_start_step(method="reload_page_logo")
+            self.driver.get(self.url_main_pages)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_main_pages)
+            self.reload_click_logo()
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="reload_page_logo")
 
     def input_position_search(self):
-        self.driver.get(self.url_main_pages)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_main_pages)
-        self.input_search()
-        self.action_return()
-        time.sleep(2)
-        self.assert_current_url(self.url_enter_iphone13)
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("input position search"):
+            Logger.add_start_step(method="input_position_search")
+            self.driver.get(self.url_main_pages)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_main_pages)
+            self.input_search()
+            self.action_return()
+            time.sleep(2)
+            self.assert_current_url(self.url_enter_iphone13)
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="input_position_search")
 
     def enter_user_and_buy_iphone13pro(self):
-        self.driver.get(self.url_main_pages)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_main_pages)
-        self.click_link_enter()
-        self.input_number()
-        self.enter_button_continue()
-        self.input_code()
-        self.input_search()
-        self.action_return()
-        self.action_esc()
-        self.action_move_slider(self.get_slider(), 50, 0)
-        self.action_move_element(self.get_checkbox_iphone13pro())
-        self.click_check_15_min()
-        self.action_move_element(self.get_link_op_memory())
-        self.click_check_iphone13pro()
-        self.action_move_element(self.get_link_first_popular())
-        self.click_add_product()
-        self.click_button_basket()
-        self.click_button_go_to_design()
-        self.assert_current_url(self.url_purchase_step1)
-        self.click_button_menu_city()
-        self.click_button_list_menu()
-        self.click_enter_second_shop()
-        self.click_from_here_get()
-        self.click_continue_button()
-        self.assert_current_url(self.url_purchase_step2)
-        self.click_pay_button()
+        with allure.step("enter user and buy iphone13pro"):
+            Logger.add_start_step(method="enter_user_and_buy_iphone13pro")
+            self.driver.get(self.url_main_pages)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_main_pages)
+            self.click_link_enter()
+            self.input_number()
+            self.enter_button_continue()
+            self.input_code()
+            self.input_search()
+            self.action_return()
+            self.action_esc()
+            self.action_move_slider(self.get_slider(), 50, 0)
+            self.action_move_element(self.get_checkbox_iphone13pro())
+            self.click_check_15_min()
+            self.action_move_element(self.get_link_op_memory())
+            self.click_check_iphone13pro()
+            self.action_move_element(self.get_link_first_popular())
+            self.click_add_product()
+            self.click_button_go_to_design()
+            self.assert_current_url(self.url_purchase_step1)
+            self.click_button_menu_city()
+            self.click_button_list_menu()
+            self.click_enter_second_shop()
+            self.click_from_here_get()
+            self.click_continue_button()
+            self.assert_current_url(self.url_purchase_step2)
+            self.click_pay_button()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="enter_user_and_buy_iphone13pro")
 
     def fail_access_user(self):
-        self.driver.get(self.url_main_pages)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_main_pages)
-        self.click_link_enter()
-        self.input_number()
-        self.enter_button_continue()
-        self.input_fail_code()
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("fail access user"):
+            Logger.add_start_step(method="fail_access_user")
+            self.driver.get(self.url_main_pages)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_main_pages)
+            self.click_link_enter()
+            self.input_number()
+            self.enter_button_continue()
+            self.input_fail_code()
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="fail_access_user")
 
     def fail_select_city(self):
-        self.driver.get(self.url_main_pages)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_main_pages)
-        self.fail_menu_city()
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("fail select city"):
+            Logger.add_start_step(method="fail_select_city")
+            self.driver.get(self.url_main_pages)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_main_pages)
+            self.fail_menu_city()
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="fail_select_city")
 
     def double_user(self):
-        self.driver.get(self.url_main_pages)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_main_pages)
-        self.click_link_enter()
-        self.fail_input_number()
-        self.enter_button_continue()
-        self.assert_word(self.get_button_write_chat(), self.write_chat)
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("double user"):
+            Logger.add_start_step(method="double_user")
+            self.driver.get(self.url_main_pages)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_main_pages)
+            self.click_link_enter()
+            self.fail_input_number()
+            self.enter_button_continue()
+            self.assert_word(self.get_button_write_chat(), self.write_chat)
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="double_user")

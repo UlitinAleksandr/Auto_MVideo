@@ -1,0 +1,111 @@
+
+-----
+Test: tests/test_main_page.py::test_open_page (call)
+Start time: 2022-11-14 19:17:06.029363
+Start name method: open_main_page
+
+End time: 2022-11-14 19:17:13.130987
+End name method: open_main_page
+URL: https://www.mvideo.ru/
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_select_city (call)
+Start time: 2022-11-14 19:17:13.136967
+Start name method: select_city
+
+End time: 2022-11-14 19:17:20.737546
+End name method: select_city
+URL: https://www.mvideo.ru/
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_select_category_phone (call)
+Start time: 2022-11-14 19:17:20.741533
+Start name method: select_category_phones
+
+End time: 2022-11-14 19:17:36.166098
+End name method: select_category_phones
+URL: https://www.mvideo.ru/telefony
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_reload_click_logo (call)
+Start time: 2022-11-14 19:17:36.172078
+Start name method: reload_page_logo
+
+End time: 2022-11-14 19:17:44.501432
+End name method: reload_page_logo
+URL: https://www.mvideo.ru/
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_field_search_input (call)
+Start time: 2022-11-14 19:17:44.527192
+Start name method: input_position_search
+
+End time: 2022-11-14 19:17:56.359255
+End name method: input_position_search
+URL: https://www.mvideo.ru/product-list-page?q=iphone+13+pro&category=smartfony-205
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_fail_user (call)
+Start time: 2022-11-14 19:17:56.366400
+Start name method: fail_access_user
+
+End time: 2022-11-14 19:18:05.791946
+End name method: fail_access_user
+URL: https://www.mvideo.ru/
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_fail_select_city (call)
+Start time: 2022-11-14 19:18:05.797151
+Start name method: fail_select_city
+
+End time: 2022-11-14 19:18:12.666344
+End name method: fail_select_city
+URL: https://www.mvideo.ru/
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_double_number_user (call)
+Start time: 2022-11-14 19:18:12.671660
+Start name method: double_user
+
+End time: 2022-11-14 19:18:20.467848
+End name method: double_user
+URL: https://www.mvideo.ru/
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_enter_user (call)
+Start time: 2022-11-14 19:18:20.473555
+Start name method: enter_user
+
+End time: 2022-11-14 19:19:05.507250
+End name method: enter_user
+URL: https://www.mvideo.ru/
+
+-----
+
+-----
+Test: tests/test_main_page.py::test_enter_user_and_buy_iphone13pro (call)
+Start time: 2022-11-14 19:19:05.513301
+Start name method: enter_user_and_buy_iphone13pro
+
+
+-----
+Test: tests/test_main_page.py::test_registration_user (call)
+Start time: 2022-11-14 19:20:47.274360
+Start name method: registration_user
+

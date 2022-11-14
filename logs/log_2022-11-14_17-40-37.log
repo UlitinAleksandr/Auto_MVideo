@@ -1,0 +1,66 @@
+
+-----
+Test: tests/test_basket_page.py::test_click_logo_go_main (call)
+Start time: 2022-11-14 17:40:41.710085
+Start name method: click_logo_go_main
+
+End time: 2022-11-14 17:40:55.693290
+End name method: click_logo_go_main
+URL: https://www.mvideo.ru/
+
+-----
+
+-----
+Test: tests/test_basket_page.py::test_open_page_basket (call)
+Start time: 2022-11-14 17:40:55.697900
+Start name method: open_page_basket
+
+End time: 2022-11-14 17:41:03.949842
+End name method: open_page_basket
+URL: https://www.mvideo.ru/cart
+
+-----
+
+-----
+Test: tests/test_basket_page.py::test_select_city (call)
+Start time: 2022-11-14 17:41:03.956798
+Start name method: select_city_basket
+
+End time: 2022-11-14 17:41:19.991220
+End name method: select_city_basket
+URL: https://www.mvideo.ru/cart?cityId=CityCZ_6276
+
+-----
+
+-----
+Test: tests/test_basket_page.py::test_add_product_basket (call)
+Start time: 2022-11-14 17:41:19.995369
+Start name method: add_product
+
+End time: 2022-11-14 17:41:34.790618
+End name method: add_product
+URL: https://www.mvideo.ru/cart
+
+-----
+
+-----
+Test: tests/test_basket_page.py::test_delete_product_from_basket (call)
+Start time: 2022-11-14 17:41:34.797252
+Start name method: delete_product_from_basket
+
+End time: 2022-11-14 17:41:53.016295
+End name method: delete_product_from_basket
+URL: https://www.mvideo.ru/cart?_requestid=937987
+
+-----
+
+-----
+Test: tests/test_basket_page.py::test_authorization_user_basket (call)
+Start time: 2022-11-14 17:41:53.022489
+Start name method: authorization_basket
+
+End time: 2022-11-14 17:42:25.479835
+End name method: authorization_basket
+URL: https://www.mvideo.ru/cart
+
+-----

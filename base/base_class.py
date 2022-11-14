@@ -26,11 +26,11 @@ class Base:
         time.sleep(3)
         now = datetime.utcnow().strftime("%Y.%m.%d.  %H.%M.%S")
         self.driver.save_screenshot("C:\\Users\\satanavsarae\\PycharmProjects\\"
-                                    "auto_Vse_Instr\\screens\\" + "screenshot " + now + ".png")
+                                    "Auto_MVideo_single_test\\screens\\" + "screenshot " + now + ".png")
 
     # Method assert_current_url
     def assert_current_url(self, url):
-        time.sleep(2)
+        time.sleep(3)
         assert self.driver.current_url == url
         print(f"{url} assert")
 

@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -58,6 +60,7 @@ class PurchasePage(BasketPage):
         print("Click enter second shop: OK")
 
     def click_from_here_get(self):
+        time.sleep(2)
         self.get_from_here_get().click()
         print("Click from here get: OK")
 

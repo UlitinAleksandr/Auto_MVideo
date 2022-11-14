@@ -3,6 +3,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from pages.purchase_page import PurchasePage
+from utilities.logger import Logger
+
+import allure
 
 
 class PhonePage(PurchasePage):
@@ -82,17 +85,23 @@ class PhonePage(PurchasePage):
 
     # Methods
     def open_phone_page(self):
-        self.driver.get(self.url_phone_page)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_phone_page)
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("open phone page"):
+            Logger.add_start_step(method="open_phone_page")
+            self.driver.get(self.url_phone_page)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_phone_page)
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="open_phone_page")
 
     def select_samsung_phone(self):
-        self.driver.get(self.url_phone_page)
-        self.driver.maximize_window()
-        self.assert_current_url(self.url_phone_page)
-        self.click_smartphone_link()
-        self.click_checkbox_samsung()
-        self.get_screenshot()
-        self.driver.quit()
+        with allure.step("select samsung phone"):
+            Logger.add_start_step(method="select_samsung_phone")
+            self.driver.get(self.url_phone_page)
+            self.driver.maximize_window()
+            self.assert_current_url(self.url_phone_page)
+            self.click_smartphone_link()
+            self.click_checkbox_samsung()
+            self.get_screenshot()
+            self.driver.delete_all_cookies()
+            Logger.add_end_step(url=self.driver.current_url, method="select_samsung_phone")
